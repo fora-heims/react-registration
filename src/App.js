@@ -5,11 +5,13 @@ import { useState } from 'react';
 import { getUser, logout } from './services/users.js';
 
 function App() {
-  const [user, setUser] = useState(getUser());
+  const [user, setUser] = useState(null);
+
   const handleLogout = async () => {
     await logout();
     setUser(null);
   };
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -21,7 +23,7 @@ function App() {
                 <button onClick={handleLogout}>Log Out</button>
               </>
             ) : (
-              <Auth />
+              <Auth user={user} setUser={setUser} />
             )}
           </Route>
         </Switch>
