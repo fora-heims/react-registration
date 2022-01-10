@@ -34,7 +34,7 @@ export default function Auth({ user, setUser }) {
       <button className={classnames({ active: type === 'signin' })} onClick={setType('signin')}>
         sign in
       </button>
-      <AuthForm {...{ email, setEmail, password, setPassword, handleSubmit, message }} />
+      <AuthForm {...{ email, setEmail, password, setPassword, handleSubmit, message, type }} />
     </div>
   );
 }
