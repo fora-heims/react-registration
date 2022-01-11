@@ -4,7 +4,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 30px;
   margin: 20px;
   border: #ff00aa solid 13px;
