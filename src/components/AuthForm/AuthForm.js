@@ -11,9 +11,13 @@ export default function AuthForm({
   submitHandler,
   type,
 }) {
+  const typeCheck = () => {
+    return type === 'signin' ? 'Sign In' : 'Sign Up';
+  };
+
   return (
     <form onSubmit={submitHandler}>
-      <h2>{type === 'signin' ? 'Sign In' : 'Sign Up'}</h2>
+      <h2>{typeCheck()}</h2>
       <p>{message}</p>
       <label>
         Email:
@@ -33,7 +37,7 @@ export default function AuthForm({
           onChange={(e) => setPassword(e.target.value)}
         />
       </label>
-      <input type="submit" value="sign in / sign up" />
+      <input type="submit" value={typeCheck()} />
     </form>
   );
 }
